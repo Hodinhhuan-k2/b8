@@ -1,0 +1,29 @@
+print("Hồ Đình Huân")
+print("MSSV:235752021610049")
+import turtle
+
+# Tạo một cửa sổ turtle
+window = turtle.Screen()
+window.bgcolor("lightgreen")
+
+# Tạo đối tượng 'painter' để vẽ
+painter = turtle.Turtle()
+
+# Thiết lập các thuộc tính của bút vẽ
+painter.fillcolor('blue')
+painter.pencolor('blue')
+painter.pensize(3)
+
+# Hàm vẽ hình vuông
+def drawsq(t, s):
+    for i in range(4):
+        t.forward(s)
+        t.left(90)
+
+# Vẽ hình vuông và xoay 180 lần để tạo ra hình vẽ quay liên tiếp
+for i in range(180):
+    drawsq(painter, 200)  # Vẽ hình vuông với chiều dài cạnh là 200
+    painter.left(18)  # Quay bút vẽ một góc 18 độ sau mỗi lần vẽ
+
+# Giữ cửa sổ mở sau khi vẽ xong
+window.mainloop()

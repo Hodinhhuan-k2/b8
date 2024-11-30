@@ -1,0 +1,39 @@
+print("Hồ Đình Huân")
+print("MSSV:235752021610049")
+import turtle
+import random
+
+# Tạo cửa sổ turtle
+window = turtle.Screen()
+window.bgcolor("lightgreen")
+
+# Tạo đối tượng turtle để vẽ
+painter = turtle.Turtle()
+painter.pensize(3)
+
+# Danh sách các màu sắc để vẽ
+colors = ["red", "green", "blue", "orange", "purple", "pink", "yellow"]
+
+
+# Vẽ các vòng tròn màu sắc ngẫu nhiên
+def draw_circles():
+    for _ in range(10):
+        color = random.choice(colors)  # Chọn màu ngẫu nhiên
+        painter.pencolor(color)  # Áp dụng màu cho bút vẽ
+        painter.circle(50)  # Vẽ vòng tròn bán kính 50
+        painter.right(36)  # Quay một góc 36 độ sau mỗi vòng tròn
+
+# Đặt vị trí ban đầu của bút vẽ
+painter.penup()
+painter.setposition(0, -150)
+painter.pendown()
+
+
+# Đặt lại vị trí bút vẽ và vẽ vòng tròn
+painter.penup()
+painter.setposition(0, 0)
+painter.pendown()
+draw_circles()
+
+# Giữ cửa sổ mở
+turtle.mainloop()

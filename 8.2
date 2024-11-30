@@ -1,0 +1,22 @@
+print("Hồ Đình Huân")
+print("MSSV:235752021610049")
+import turtle
+import random
+
+# Danh sách các màu sắc
+colors = ["red", "green", "blue", "orange", "purple", "pink", "yellow"]
+
+# Tạo đối tượng turtle để vẽ
+painter = turtle.Turtle()
+painter.pensize(3)
+
+# Vẽ 10 vòng tròn với màu sắc ngẫu nhiên
+for i in range(10):
+    color = random.choice(colors)  # Chọn màu ngẫu nhiên từ danh sách
+    painter.pencolor(color)  # Áp dụng màu cho bút vẽ
+    painter.circle(100)  # Vẽ vòng tròn có bán kính 100
+    painter.right(30)  # Quay bút vẽ sang phải 30 độ
+    painter.left(60)  # Quay bút vẽ sang trái 60 độ
+
+# Giữ cửa sổ mở
+turtle.mainloop()

@@ -1,0 +1,41 @@
+print("Hồ Đình Huân")
+print("MSSV:235752021610049")
+import tkinter as tk
+
+# Khởi tạo cửa sổ
+root = tk.Tk()
+
+# Khởi tạo biến v để lưu giá trị được chọn
+v = tk.IntVar()
+v.set(1)  # Khởi tạo lựa chọn ban đầu là Python (mã 1)
+
+# Danh sách các ngôn ngữ lập trình
+languages = [
+    ("Python", 1),
+    ("Perl", 2),
+    ("Java", 3),
+    ("C++", 4),
+    ("C", 5)
+]
+
+# Hàm hiển thị lựa chọn
+def ShowChoice():
+    print(v.get())
+
+# Label thông báo cho người dùng
+tk.Label(root, 
+         text="Choose your favourite programming language:",
+         justify=tk.LEFT,
+         padx=20).pack()
+
+# Tạo radio button cho từng ngôn ngữ
+for val, language in languages:
+    tk.Radiobutton(root, 
+                   text=language[0],
+                   padx=20,
+                   variable=v,
+                   command=ShowChoice,
+                   value=language[1]).pack(anchor=tk.W)
+
+# Vòng lặp chính của tkinter
+root.mainloop()

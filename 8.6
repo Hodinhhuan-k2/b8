@@ -1,0 +1,55 @@
+print("Hồ Đình Huân")
+print("MSSV:235752021610049")
+from tkinter import *
+from tkinter import filedialog
+
+# Hàm xử lý menu
+def NewFile():
+    print("New File!")
+
+def OpenFile():
+    print("Open File!")
+
+def Exit():
+    print("Exit Program!")
+    root.quit()  # Thoát khỏi ứng dụng
+
+def InsText():
+    print("Insert Text!")
+
+def InsPic():
+    print("Insert Picture!")
+
+def About():
+    print("This is a simple example of a menu")
+
+# Khởi tạo cửa sổ chính
+root = Tk()
+root.title("Menu Example")  # Tiêu đề cửa sổ
+root.geometry("400x300")  # Kích thước cửa sổ
+
+# Tạo menu cho cửa sổ
+menu = Menu(root)
+root.config(menu=menu)
+
+# Menu "File"
+filemenu = Menu(menu)
+menu.add_cascade(label="File", menu=filemenu)
+filemenu.add_command(label="New", command=NewFile)  # Lựa chọn "New"
+filemenu.add_command(label="Open", command=OpenFile)  # Lựa chọn "Open"
+filemenu.add_separator()  # Dấu phân cách
+filemenu.add_command(label="Exit", command=Exit)  # Lựa chọn "Exit"
+
+# Menu "Insert"
+insertmenu = Menu(menu)
+menu.add_cascade(label="Insert", menu=insertmenu)
+insertmenu.add_command(label="Insert Text", command=InsText)  # Lựa chọn "Insert Text"
+insertmenu.add_command(label="Insert Picture", command=InsPic)  # Lựa chọn "Insert Picture"
+
+# Menu "Help"
+helpmenu = Menu(menu)
+menu.add_cascade(label="Help", menu=helpmenu)
+helpmenu.add_command(label="About...", command=About)  # Lựa chọn "About"
+
+# Bắt đầu vòng lặp sự kiện của tkinter
+root.mainloop()
